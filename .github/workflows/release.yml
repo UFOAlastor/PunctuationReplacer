@@ -15,11 +15,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
+          node-version: "18.x"
 
       - name: Build plugin
         run: |
-          npm install
+          npm ci
           npm run build
 
       - name: Create release
@@ -27,7 +27,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tag="${GITHUB_REF#refs/tags/}"
-
+          
+          # 确保README.md大写
+          mv readme.md README.md || true
+          
+          # 创建版本压缩包
+          zip release.zip main.js manifest.json styles.css README.md
+          
+          # 创建发布版本
           gh release create "$tag" \
-            --notes "Release $tag" \
-            main.js manifest.json styles.css
+            --title "版本 $tag" \
+            --notes "此版本是自动通过GitHub Actions发布的。" \
+            release.zip main.js manifest.json styles.css README.md
