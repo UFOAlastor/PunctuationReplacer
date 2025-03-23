@@ -1,0 +1,10 @@
+{
+    "id": "punctuation-replacer",
+    "name": "Punctuation Replacer",
+    "version": "1.0.0",
+    "minAppVersion": "0.9.12",
+    "description": "Automatically replace Chinese punctuation with English punctuation.",
+    "author": "YourName",
+    "authorUrl": "https://github.com/yourname/punctuation-replacer",
+    "isDesktopOnly": false
+}
