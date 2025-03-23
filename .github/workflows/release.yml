@@ -12,6 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Debug Information
+        run: |
+          echo "Running workflow for ref: $GITHUB_REF"
+          echo "Tag name: ${GITHUB_REF#refs/tags/}"
+          echo "Current directory content:"
+          ls -la
+      
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -21,6 +28,8 @@ jobs:
         run: |
           npm ci
           npm run build
+          echo "Build completed. Directory content:"
+          ls -la
 
       - name: Create release
         env:
@@ -28,8 +37,12 @@ jobs:
         run: |
           tag="${GITHUB_REF#refs/tags/}"
           
+          echo "Creating release for tag: $tag"
+          echo "Files to be included:"
+          ls -la main.js manifest.json styles.css || echo "Some files missing!"
+          
           # 创建发布版本 - 只包含Obsidian插件所需的三个关键文件
           gh release create "$tag" \
             --title "版本 $tag" \
             --notes "此版本包含Obsidian插件所需的三个核心文件：main.js、manifest.json和styles.css。" \
-            main.js manifest.json styles.css
+            main.js manifest.json styles.css || echo "Failed to create release. Error code: $?"
