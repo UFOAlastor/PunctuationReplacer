@@ -36,7 +36,7 @@ var PunctuationReplacer = class extends import_obsidian.Plugin {
     await this.loadSettings();
     this.addCommand({
       id: "replace-punctuation",
-      name: "Replace Punctuation",
+      name: "\u66FF\u6362\u6807\u70B9\u7B26\u53F7 (Replace Punctuation)",
       callback: () => {
         const view = this.app.workspace.getActiveViewOfType(import_obsidian.MarkdownView);
         if (view) {
@@ -81,8 +81,8 @@ var PunctuationReplacerSettingTab = class extends import_obsidian.PluginSettingT
   display() {
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.createEl("h2", { text: "Punctuation Replacer Settings" });
-    new import_obsidian.Setting(containerEl).setName("Enable Auto Replace").setDesc("Automatically replace Chinese punctuation with English punctuation.").addToggle((toggle) => toggle.setValue(this.plugin.settings.autoReplace).onChange(async (value) => {
+    containerEl.createEl("h2", { text: "\u6807\u70B9\u7B26\u53F7\u66FF\u6362\u5668\u8BBE\u7F6E (Punctuation Replacer Settings)" });
+    new import_obsidian.Setting(containerEl).setName("\u542F\u7528\u81EA\u52A8\u66FF\u6362 (Enable Auto Replace)").setDesc("\u81EA\u52A8\u5C06\u4E2D\u6587\u6807\u70B9\u7B26\u53F7\u66FF\u6362\u4E3A\u82F1\u6587\u6807\u70B9\u7B26\u53F7 (Automatically replace Chinese punctuation with English punctuation)").addToggle((toggle) => toggle.setValue(this.plugin.settings.autoReplace).onChange(async (value) => {
       this.plugin.settings.autoReplace = value;
       await this.plugin.saveSettings();
     }));

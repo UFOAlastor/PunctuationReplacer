@@ -1,25 +1,26 @@
 {
-  "name": "punctuation-replacer",
-  "version": "1.0.0",
-  "description": "Automatically replace Chinese punctuation with English punctuation",
-  "main": "main.js",
-  "scripts": {
-    "dev": "node esbuild.config.mjs",
-    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
-  },
-  "keywords": [
-    "obsidian",
-    "plugin",
-    "punctuation"
-  ],
-  "author": "YourName",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^16.11.6",
-    "builtin-modules": "3.3.0",
-    "esbuild": "0.17.3",
-    "obsidian": "^1.4.11",
-    "tslib": "2.4.0",
-    "typescript": "4.7.4"
+    "name": "punctuation-replacer",
+    "version": "1.0.0",
+    "description": "自动将中文标点符号替换为英文标点符号 (Automatically replace Chinese punctuation with English punctuation)",
+    "main": "main.js",
+    "scripts": {
+      "dev": "node esbuild.config.mjs",
+      "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+    },
+    "keywords": [
+      "obsidian",
+      "plugin",
+      "punctuation",
+      "标点符号"
+    ],
+    "author": "YourName",
+    "license": "MIT",
+    "devDependencies": {
+      "@types/node": "^16.11.6",
+      "builtin-modules": "3.3.0",
+      "esbuild": "0.17.3",
+      "obsidian": "^1.4.11",
+      "tslib": "2.4.0",
+      "typescript": "4.7.4"
+    }
   }
-}

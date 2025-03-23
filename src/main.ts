@@ -16,7 +16,7 @@ export default class PunctuationReplacer extends Plugin {
 
         this.addCommand({
             id: 'replace-punctuation',
-            name: 'Replace Punctuation',
+            name: '替换标点符号 (Replace Punctuation)',
             callback: () => {
                 const view = this.app.workspace.getActiveViewOfType(MarkdownView);
                 if (view) {
@@ -82,11 +82,11 @@ class PunctuationReplacerSettingTab extends PluginSettingTab {
         const { containerEl } = this;
         containerEl.empty();
 
-        containerEl.createEl('h2', { text: 'Punctuation Replacer Settings' });
+        containerEl.createEl('h2', { text: '标点符号替换器设置 (Punctuation Replacer Settings)' });
 
         new Setting(containerEl)
-            .setName('Enable Auto Replace')
-            .setDesc('Automatically replace Chinese punctuation with English punctuation.')
+            .setName('启用自动替换 (Enable Auto Replace)')
+            .setDesc('自动将中文标点符号替换为英文标点符号 (Automatically replace Chinese punctuation with English punctuation)')
             .addToggle(toggle => toggle
                 .setValue(this.plugin.settings.autoReplace)
                 .onChange(async (value: boolean) => {
