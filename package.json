@@ -13,7 +13,7 @@
       "punctuation",
       "标点符号"
     ],
-    "author": "YourName",
+    "author": "ZanderAlastor",
     "license": "MIT",
     "devDependencies": {
       "@types/node": "^16.11.6",
