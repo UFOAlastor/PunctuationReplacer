@@ -28,14 +28,8 @@ jobs:
         run: |
           tag="${GITHUB_REF#refs/tags/}"
           
-          # 确保README.md大写
-          mv readme.md README.md || true
-          
-          # 创建版本压缩包
-          zip release.zip main.js manifest.json styles.css README.md
-          
-          # 创建发布版本
+          # 创建发布版本 - 只包含Obsidian插件所需的三个关键文件
           gh release create "$tag" \
             --title "版本 $tag" \
-            --notes "此版本是自动通过GitHub Actions发布的。" \
-            release.zip main.js manifest.json styles.css README.md
+            --notes "此版本包含Obsidian插件所需的三个核心文件：main.js、manifest.json和styles.css。" \
+            main.js manifest.json styles.css
