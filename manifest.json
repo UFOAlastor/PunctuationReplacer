@@ -5,6 +5,6 @@
     "minAppVersion": "0.9.12",
     "description": "自动将中文标点符号替换为英文标点符号 (Automatically replace Chinese punctuation with English punctuation)",
     "author": "ZanderAlastor",
-    "authorUrl": "https://github.com/UFOAlastor/PunctuationReplacer",
+    "authorUrl": "https://github.com/UFOAlastor",
     "isDesktopOnly": false
 }
