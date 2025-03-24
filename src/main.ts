@@ -23,7 +23,6 @@ export default class PunctuationReplacer extends Plugin {
                     this.replacePunctuation(view.editor);
                 }
             },
-            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'R' }],
         });
 
         this.registerEvent(
@@ -93,5 +92,14 @@ class PunctuationReplacerSettingTab extends PluginSettingTab {
                     this.plugin.settings.autoReplace = value;
                     await this.plugin.saveSettings();
                 }));
+
+        // 热键设置说明 (Hotkey Settings Description)
+        containerEl.createEl('h3', { text: '热键设置 (Hotkey Settings)' });
+
+        containerEl.createEl('p', { text: '您可以在Obsidian快捷键设置中为"替换标点符号 (Replace Punctuation)"命令自定义热键。 (You can customize hotkeys for the "Replace Punctuation" command in Obsidian\'s hotkey settings.)' });
+
+        containerEl.createEl('p', { text: '推荐热键: Ctrl+Shift+R 或 Cmd+Shift+R (Recommended hotkey: Ctrl+Shift+R or Cmd+Shift+R)' });
+
+        containerEl.createEl('p', { text: '设置路径: 设置 → 快捷键 → 搜索"替换标点符号" (Settings path: Settings → Hotkeys → Search for "Replace Punctuation")' });
     }
 }
