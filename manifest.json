@@ -1,7 +1,7 @@
 {
     "id": "punctuation-replacer",
     "name": "标点符号替换器 (Punctuation Replacer)",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minAppVersion": "0.9.12",
     "description": "自动将中文标点符号替换为英文标点符号 (Automatically replace Chinese punctuation with English punctuation)",
     "author": "ZanderAlastor",

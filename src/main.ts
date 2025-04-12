@@ -52,6 +52,7 @@ export default class PunctuationReplacer extends Plugin {
         const content = editor.getValue();
         const newContent = content
             .replace(/，/g, ', ')
+            .replace(/、/g, ', ')
             .replace(/。/g, '. ')
             .replace(/！/g, '! ')
             .replace(/？/g, '? ')
@@ -60,7 +61,22 @@ export default class PunctuationReplacer extends Plugin {
             .replace(/"/g, '"')
             .replace(/"/g, '"')
             .replace(/'/g, "'")
-            .replace(/'/g, "'");
+            .replace(/'/g, "'")
+            .replace(/（/g, '(')
+            .replace(/）/g, ')')
+            .replace(/【/g, '[')
+            .replace(/】/g, ']')
+            // .replace(/《/g, '<')
+            // .replace(/》/g, '>')
+            // .replace(/『/g, '"')
+            // .replace(/』/g, '"')
+            // .replace(/「/g, "'")
+            // .replace(/」/g, "'")
+            .replace(/・/g, '·')
+            .replace(/—/g, '-')
+            .replace(/～/g, '~')
+            .replace(/…/g, '...')
+            .replace(/　/g, ' ');
 
         if (content !== newContent) {
             editor.setValue(newContent);

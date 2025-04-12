@@ -1,6 +1,6 @@
 {
     "name": "punctuation-replacer",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "自动将中文标点符号替换为英文标点符号 (Automatically replace Chinese punctuation with English punctuation)",
     "main": "main.js",
     "scripts": {

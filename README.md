@@ -9,17 +9,27 @@
 (This plugin can automatically detect and replace the following Chinese punctuation marks with their corresponding English punctuation:)
 
 | 中文标点 (Chinese) | 英文标点 (English) |
-| -------- | -------- |
-| ，       | ,        |
-| 。       | .        |
-| ！       | !        |
-| ？       | ?        |
-| ；       | ;        |
-| ：       | :        |
-| "        | "        |
-| "        | "        |
-| '        | '        |
-| '        | '        |
+| ------------------ | ------------------ |
+| ，                 | ,                  |
+| 、                 | ,                  |
+| 。                 | .                  |
+| ！                 | !                  |
+| ？                 | ?                  |
+| ；                 | ;                  |
+| ：                 | :                  |
+| "                  | "                  |
+| "                  | "                  |
+| '                  | '                  |
+| '                  | '                  |
+| （                 | (                  |
+| ）                 | )                  |
+| 【                 | [                  |
+| 】                 | ]                  |
+| ・                 | ·                  |
+| —                  | -                  |
+| ～                 | ~                  |
+| …                  | ...                |
+| 　(全角空格)        | (半角空格)          |
 
 ## 安装方法 (Installation)
 
@@ -66,8 +76,7 @@
 
 ## 开发者信息 (Developer Information)
 
-- 版本 (Version)：1.0.0
-- 开发者 (Developer)：[开发者姓名 (Developer Name)]
+- 开发者 (Developer)：ZanderAlastor
 - 许可证 (License)：MIT
 - GitHub 仓库 (Repository)：[https://github.com/UFOAlastor/PunctuationReplacer](https://github.com/UFOAlastor/PunctuationReplacer)
 
