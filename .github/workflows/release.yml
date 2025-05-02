@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
@@ -18,7 +20,7 @@ jobs:
           echo "Tag name: ${GITHUB_REF#refs/tags/}"
           echo "Current directory content:"
           ls -la
-      
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -36,11 +38,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tag="${GITHUB_REF#refs/tags/}"
-          
+
           echo "Creating release for tag: $tag"
           echo "Files to be included:"
           ls -la main.js manifest.json styles.css || echo "Some files missing!"
-          
+
           # 创建发布版本 - 只包含Obsidian插件所需的三个关键文件
           gh release create "$tag" \
             --title "版本 $tag" \
